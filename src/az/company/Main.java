@@ -35,30 +35,16 @@ public class Main {
                     System.out.println("Press 1 Yeni mehsul elave et ");
                     System.out.println("Press 2 Mehsul uzerinde duzelis et ");
                     System.out.println("Press 3 Mehsulu sil");
+                    System.out.println("Press 4 Mehsullara bax");
                     System.out.print("Type (waiting...): ");
                     int codeProduct = Integer.parseInt(reader.readLine());
 
                     switch (codeProduct) {
                         case 1:
-
-                            System.out.print("add product code :");
-
-                            int productCode = Integer.parseInt(reader.readLine());
-                            System.out.print("add product name :");
-                            String productName = reader.readLine();
-                            System.out.print("add product  cost :");
-                            double productCost = Double.parseDouble(reader.readLine());
-                            System.out.print("add product count ");
-                            int productCount = Integer.parseInt(reader.readLine());
-                            String[] array = Arrays.stream(Category.values()).map(Enum::name).toArray(String[]::new);
-                            String categories = String.join(",", array);
-                            System.out.print("add product category ("+categories +") :");
-
-                            Category productCategory = Category.valueOf(reader.readLine());
-
-                            productService.addNewProduct(productCode, productName, productCost, productCount, productCategory);
+                            addNewProduct(reader, productService);
                             break;
                         case 2:
+                            updateProduct(reader, productService);
                             // code block
                             break;
                         default:
@@ -72,5 +58,31 @@ public class Main {
             }
         }
 
+    }
+
+    private static void updateProduct(BufferedReader reader, ProductService productService) {
+        System.out.print("update product");
+
+//        int productCode = Integer.parseInt(reader.readLine());
+    }
+
+
+    private static void addNewProduct(BufferedReader reader, ProductService productService) throws IOException {
+        System.out.print("add product code :");
+
+        int productCode = Integer.parseInt(reader.readLine());
+        System.out.print("add product name :");
+        String productName = reader.readLine();
+        System.out.print("add product  cost :");
+        double productCost = Double.parseDouble(reader.readLine());
+        System.out.print("add product count ");
+        int productCount = Integer.parseInt(reader.readLine());
+        String[] array = Arrays.stream(Category.values()).map(Enum::name).toArray(String[]::new);
+        String categories = String.join(",", array);
+        System.out.print("add product category ("+categories +") :");
+
+        Category productCategory = Category.valueOf(reader.readLine());
+
+        productService.addNewProduct(productCode, productName, productCost, productCount, productCategory);
     }
 }
