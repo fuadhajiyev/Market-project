@@ -10,16 +10,6 @@ import java.util.UUID;
 
 public class SaleService {
 
-     List<Sale> sales = new ArrayList<>();
-    String id = UUID.randomUUID().toString();
-    /**
-     * step1 -
-     * @param sales
-     * @return
-     */
-    public  Sale addNewSale(List<SaleProduct> sales){
-         Sale  addSale = new Sale();
 
-    }
 
 }
