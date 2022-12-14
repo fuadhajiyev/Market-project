@@ -2,6 +2,9 @@ package az.company.models;
 
 import az.company.enums.Category;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Product {
     int id;
     String productName;
@@ -63,11 +66,11 @@ public class Product {
     @Override
     public String toString() {
         return "Product:  \n" +
-                "  code = " + id + "\n"+
-                "  Name = " + productName +  "\n"+
-                "  Cost = " + productCost + "\n"+
-                "  Count = " + productCount +"\n"+
-                "  Category = " + category +"\n"+
+                "  code = " + id + "\n" +
+                "  Name = " + productName + "\n" +
+                "  Cost = " + productCost + "\n" +
+                "  Count = " + productCount + "\n" +
+                "  Category = " + category + "\n" +
                 "#################################";
     }
 }
